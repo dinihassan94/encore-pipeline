@@ -10,7 +10,7 @@ pipeline {
             steps {
                 script {
                     // Construction de l'image Docker
-                    sh 'docker build -t my-html-page .'
+                    sh 'docker build -t nginx:alpine .'
                 }
             }
         }
@@ -18,7 +18,7 @@ pipeline {
             steps {
                 script {
                     // Exécutez le conteneur Docker
-                    sh 'docker run -d -p 8082:80 --name my-html-container my-html-page'
+                    sh 'docker run -d -p 8082:80 --name my-html-container nginx:alpine'
                 }
             }
         }
